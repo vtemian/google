@@ -141,7 +141,7 @@ def search(query, tld='com', lang='en', num=10, start=0, stop=None, pause=2.0):
             link = a['href']
             o = urlparse.urlparse(link, 'http')
             if o.netloc and 'google' not in o.netloc:
-                yield link
+                yield link,a
 
         # Prepare the URL for the next request
         start += num
